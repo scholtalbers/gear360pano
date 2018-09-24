@@ -35,7 +35,7 @@ TMPAUDIO="tmpaudio.aac"
 TMPVIDEO="tmpvideo.mp4"
 # Throttle parallel processing to give some room for other processes
 # See: https://www.gnu.org/software/parallel/parallel_tutorial.html#Limiting-the-resources
-PARALLELEXTRAOPTS="--load 99% --noswap --memfree 500M"
+PARALLELEXTRAOPTS="--load 99% --noswap"
 # Debug, yes = print debug messages
 DEBUG="no"
 # Global flag if temporary directories should be removed
@@ -186,7 +186,7 @@ case $key in
     ;;
   -s|--speed)
     FFMPEGQUALITYDEC=""
-    FFMPEGQUALITYENC="-c:v libx264 -preset ultrafast"
+    FFMPEGQUALITYENC="-c:v libx264 -preset fast"
     shift
     ;;
   --mac)
